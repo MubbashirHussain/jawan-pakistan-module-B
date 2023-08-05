@@ -85,12 +85,12 @@ let arr = [
 let redner_area = document.querySelector('.rednering_area')
 let company_select = document.querySelector('#company_select')
 let model_select = document.querySelector('#model_select')
+let SearchInput = document.querySelector('.SearchInput')
 
-
-let Rendering_cards = (arr, Rendering_area) => {
-    Rendering_area.innerHTML = ""
+let Rendering_cards = (arr) => {
+    redner_area.innerHTML = ""
     arr.map((obj) => {
-        Rendering_area.innerHTML += `
+        redner_area.innerHTML += `
         <div class="card m-3" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">${obj.brand}</h5>
@@ -107,25 +107,23 @@ let Rendering_cards = (arr, Rendering_area) => {
     })
 }
 
-let Filling_selects = (select, options, mod) => {
+let Filling_selects = (options, select) => {
     options.forEach(option => {
-        select.innerHTML += `<option value="${option[mod]}">${option[mod]}</option>`
+        select.innerHTML += `<option value="${option}">${option}</option>`
     });
-    select.addEventListener('change', (e) => { Filering_cards(e, options, mod) })
 }
 
-let Filering_cards = (e, array, option) => {
+let Filering_cards = (e, array, fun, select) => {
     let selected = e.target.value;
     if (selected.split(" ")[0] != "Select") {
-        let filered_value = array.filter(obj => obj[option] == selected)
-        Rendering_cards(filered_value, redner_area)
+        window.search = () => {
+            let NewA = array.filter((arra) => arra[selected] == SearchInput.value)
+            Rendering_cards(NewA)
+        }
     } else {
-        Rendering_cards(array, redner_area)
-
+        Rendering_cards(array)
     }
 }
-
-
-Rendering_cards(arr, redner_area)
-Filling_selects(company_select, arr, "brand")
-Filling_selects(model_select, arr, "model")
+Rendering_cards(arr)
+Filling_selects(Object.keys(arr[0]), company_select)
+company_select.addEventListener('change', (e) => { Filering_cards(e, arr) })
