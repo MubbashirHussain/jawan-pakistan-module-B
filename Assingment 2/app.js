@@ -111,6 +111,7 @@ let Filling_selects = (select, options, mod) => {
     options.forEach(option => {
         select.innerHTML += `<option value="${option[mod]}">${option[mod]}</option>`
     });
+    select.addEventListener('change', (e) => { Filering_cards(e, options, mod) })
 }
 
 let Filering_cards = (e, array, option) => {
@@ -128,5 +129,3 @@ let Filering_cards = (e, array, option) => {
 Rendering_cards(arr, redner_area)
 Filling_selects(company_select, arr, "brand")
 Filling_selects(model_select, arr, "model")
-company_select.addEventListener('change', (e) => { Filering_cards(e, arr, "brand") })
-model_select.addEventListener('change', (e) => { Filering_cards(e, arr, "model") })
