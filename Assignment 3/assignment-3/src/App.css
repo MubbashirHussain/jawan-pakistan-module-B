@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --nav-color: #272a33;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+}
+
+
+.navbar-custom {
+  padding: 20px 0px;
+  width: 100%;
+  border-radius: 0px;
+  z-index: 999;
+  margin-bottom: 0px;
+  transition: all 0.5s ease-in-out;
+}
+
+.bg-overlay {
+  background: linear-gradient(to right, #512da8, #711e72);
+  opacity: 0.9;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.hover-effect {
+  transition: all 0.3s ease-in-out;
+}
+
+.bg-web-desc {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home-page {
+  background-image: url(http://dorsin.react.themesbrand.com/assets/images/bg-home.jpg);
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  flex-direction: column;
+}
+
+.z-index-12 {
+  z-index: 12;
+}
+
+
+.section-6-card img {
+  margin: -40px auto;
+  height: 68px;
+  width: 68px;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
