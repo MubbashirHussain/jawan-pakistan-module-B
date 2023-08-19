@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body{
+   min-height: 100vh;
+   height: 100%;
+}
+
+.overflow-hidden{
+  overflow:hidden;
+}
+input:focus{
+outline: none;
+
+}
+button:focus{
+   box-shadow: none !important;
+}
+li{
+  cursor:pointer;
+}
+ul{
+  overflow-y:scroll;
+}
+ul::-webkit-scrollbar{
+  width: 0;
+}
