@@ -12,7 +12,7 @@ function Card({ Searched }) {
                                 <li className="list-none fw-bold  "><span className="text-secondary">Age</span>         {Searched.age} </li>
                                 <li className="list-none fw-bold  "><span className="text-secondary">Institute</span>   {Searched.institute} </li>
                                 <li className="list-none fw-bold  "><span className="text-secondary">Category</span>    {Searched.Category} </li>
-                                <li className={`list-none fw-bold  ${Searched.IsActive ? "li-active" : "li-active"} `}><span className="text-secondary">Status</span>      {Searched.IsActive ? "Active" : "Un-Active"} </li>
+                                <li className={`list-none fw-bold  ${Searched.IsActive ? "li-active" : "li-unactive"} `}><span className="text-secondary">Status</span>      {Searched.IsActive ? "Active" : "Un-Active"} </li>
                             </ul>
                         </div>
                     </div>

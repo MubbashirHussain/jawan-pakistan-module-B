@@ -31,7 +31,7 @@ function App() {
 
   let Filtering = (Category) => {
     if (Category != null && Category !== "Category") {
-      let NewTablData = TableData.filter((x, i) => x.Category === Category)
+      let NewTablData = Student_Data.filter((x, i) => x.Category === Category)
       setTableData([...NewTablData])
     } else {
       setTableData(Student_Data)
