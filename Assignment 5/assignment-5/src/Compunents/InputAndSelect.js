@@ -1,17 +1,18 @@
-import { tab } from '@testing-library/user-event/dist/tab'
 import '../App.css'
-function Input ({InputValue , inpVal ,TableData}) {
+function Input({ InputValue, inpVal, TableData, setSelect, setSearched }) {
 
 
+    let Category = TableData.map((x) => x.Category)
+    Category = [...new Set(Category)]
 
-    let Category = new Set([])
-    console.log(TableData)
-    console.log(Category)
     return (
         <>
-         <input type="text" value={inpVal} onChange={(e)=>{InputValue(e.target.value)}} className="border-0 p-1" style={{ width: '79%' }} placeholder="Search By Name" />
-            <select name id style={{ width: '20%' }} className="btn-primary h-100 rounded">
-              <option value="Category" selected={true}>Category</option>
+            <input type="text" value={inpVal} onChange={(e) => { InputValue(e.target.value)}} className="border-0 p-1" style={{ width: '79%' }} placeholder="Search By Name" />
+            <select style={{ width: '20%' }} onChange={(e) => { setSelect(e.target.value) }} className="btn-primary h-100 rounded">
+                <option value={null} defaultValue={null}>Category</option>
+                {Category.map((x, i) => {
+                    return (<option className='p-2' value={x} key={i} >{x}</option>)
+                })}
             </select>
         </>
     )

@@ -20,24 +20,38 @@ function App() {
   }
 
   let SearchBtn = () => {
-    console.log("btn Clicked")
-    console.log(inpVal)
+    Filtering(Select)
+    setSearched(...Student_Data.filter((x) => {
+      if (x.UserName.toLowerCase() === inpVal.toLowerCase()) {
+        return x
+      }
+      return null
+    }))
   }
 
+  let Filtering = (Category) => {
+    if (Category != null && Category !== "Category") {
+      let NewTablData = TableData.filter((x, i) => x.Category === Category)
+      setTableData([...NewTablData])
+    } else {
+      setTableData(Student_Data)
+    }
+
+  }
 
   return (
     <>
       <div className="container">
         <div className="row my-5 m-0 p-0">
           <div className="w-100 p-1 border my-2 rounded border-secondary">
-            <Input InputValue={InputValue} TableData={TableData} inpVal={inpVal}></Input>
+            <Input InputValue={InputValue} TableData={Student_Data} setSelect={setSelect} inpVal={inpVal} setSearched={setSearched}></Input>
           </div>
-          <SearchBTN SearchBtn={SearchBtn} ></SearchBTN>
+          <SearchBTN SearchBtn={SearchBtn}></SearchBTN>
         </div>
         <div className="row my-3">
-          {!Searched ? <DataTable TableData={TableData}></DataTable> : null}
+          <DataTable TableData={TableData}></DataTable>
         </div>
-        {Searched ? <Card></Card> : null}
+        {Searched ? <Card Searched={Searched} ></Card> : null}
 
       </div>
 

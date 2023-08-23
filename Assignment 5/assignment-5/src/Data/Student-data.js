@@ -12,7 +12,7 @@ export const Student_Data = [
         UserName: "Asim",
         age: 18,
         institute: "Jawan Pakistan",
-        Category: "Bank end Developer",
+        Category: "Back end Developer",
         IsActive: false
     },
     {
