@@ -1,0 +1,29 @@
+*{
+   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    min-height: 100vh;
+    height: 100%;
+    color: #4d4dac;
+    width: 100%;
+}
+
+.SwitchParent{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0;
+}
+.HiddenScrollbar::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+
+.ResetLinks{
+    color:#000;
+    text-decoration: none;
+    font-weight:bold;
+    font-size: larger;
+}
