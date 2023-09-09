@@ -11,9 +11,9 @@ function AppRouter() {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />}></Route>
-                <Route path="about" element={<About />}></Route>
-                <Route path="services" element={<Services />}></Route>
-                <Route path="admin/*" element={<Admin />}>
+                <Route path="/about" element={<About />}></Route>
+                <Route path="/services" element={<Services />}></Route>
+                <Route path="/admin/*" element={<Admin />}>
                 </Route>
             </Routes>
         </Router>

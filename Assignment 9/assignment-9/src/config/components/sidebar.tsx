@@ -71,7 +71,7 @@ export default function ResponsiveDrawer(props: Props) {
             <Divider />
             <List>
                 {NavigationBTNsARR.map((Obj, index) => (
-                    <Link className="ResetLinks" to={Obj.Route} key={index}>
+                    <Link className="ResetLinks" to={`${Obj.Route}`} key={index}>
                         <ListItem disablePadding>
                             <ListItemButton>
                                 <ListItemIcon >
@@ -130,17 +130,17 @@ export default function ResponsiveDrawer(props: Props) {
             >
                 {
                     <Routes>
-                        <Route path='dashboard' element={<Deshboard />}></Route>
-                        <Route path='order' element={<Order />}></Route>
-                        <Route path='customer' element={<Customer />}></Route>
-                        <Route path='analytics' element={<Analytics />}></Route>
-                        <Route path='reviews' element={<Reviews />}></Route>
-                        <Route path='foods' element={<Foods />}></Route>
-                        <Route path='foodsdetal' element={<FoodsDetail />}></Route>
-                        <Route path='Customerdetail' element={<Customer />}></Route>
-                        <Route path='calender' element={<CCalender />}></Route>
-                        <Route path='chat' element={<Chat />}></Route>
-                        <Route path='wallet' element={<Wallet />}></Route>
+                        <Route path='/dashboard' element={<Deshboard />}></Route>
+                        <Route path='/order' element={<Order />}></Route>
+                        <Route path='/customer' element={<Customer />}></Route>
+                        <Route path='/analytics' element={<Analytics />}></Route>
+                        <Route path='/reviews' element={<Reviews />}></Route>
+                        <Route path='/foods' element={<Foods />}></Route>
+                        <Route path='/foodsdetal' element={<FoodsDetail />}></Route>
+                        <Route path='/Customerdetail' element={<Customer />}></Route>
+                        <Route path='/calender' element={<CCalender />}></Route>
+                        <Route path='/chat' element={<Chat />}></Route>
+                        <Route path='/wallet' element={<Wallet />}></Route>
                     </Routes>
                 }
                 <Toolbar />

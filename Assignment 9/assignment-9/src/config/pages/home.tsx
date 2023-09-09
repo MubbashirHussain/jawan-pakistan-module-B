@@ -12,11 +12,11 @@ function Home() {
             <div>
                 <Link to="/">Home</Link>
                 <br />
-                <Link to="about">About</Link>
+                <Link to="/about">About</Link>
                 <br />
-                <Link to="services">services</Link>
+                <Link to="/services">services</Link>
                 <br />
-                <Link to="admin">admin</Link>
+                <Link to="/admin/dashboard">admin</Link>
             </div>
         </>
     )
